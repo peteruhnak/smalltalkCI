@@ -2,6 +2,7 @@ running
 runCase: aTestCase
 	| result |
 	result := SCITestRunnerResult new testCase: aTestCase; yourself.
+	SmalltalkCI printToStdout: aTestCase asString.
 	result time: (SmalltalkCI timeToRun: [
 		[ [ aTestCase runCase ]
 			on: self class errorExceptions
