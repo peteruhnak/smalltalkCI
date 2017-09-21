@@ -1,12 +1,16 @@
 private
 enableIcebergDuring: aBlock
-	| integrationEnabled |
+	| integrationEnabled remoteTypeSelector |
 	self class environment
 		at: #Iceberg
-		ifPresent: [ :iceberg |
+		ifPresent: [ :iceberg | 
 			integrationEnabled := iceberg enableMetacelloIntegration.
-			iceberg enableMetacelloIntegration: true ].
-	aBlock ensure: [
-		self class environment
-			at: #Iceberg
-			ifPresent: [ :iceberg |iceberg enableMetacelloIntegration: integrationEnabled ] ]
+			remoteTypeSelector := iceberg remoteTypeSelector.
+			iceberg enableMetacelloIntegration: true.
+			iceberg remoteTypeSelector: #httpsUrl ].
+	aBlock
+		ensure: [ self class environment
+				at: #Iceberg
+				ifPresent: [ :iceberg | 
+					iceberg enableMetacelloIntegration: integrationEnabled.
+					iceberg remoteTypeSelector: remoteTypeSelector ] ]
