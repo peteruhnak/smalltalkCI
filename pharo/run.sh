@@ -278,7 +278,7 @@ pharo::enable_package_cache() {
 	Transcript logCr: MCCacheRepository cacheDirectory.
   "
   
-  pharo:run_script "Transcript logCr: MCCacheRepository cacheDirectory."
+  pharo::run_script "Transcript logCr: MCCacheRepository cacheDirectory."
 }
 
 ################################################################################
