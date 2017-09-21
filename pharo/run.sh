@@ -274,8 +274,11 @@ pharo::run_script() {
 ################################################################################
 pharo::enable_package_cache() {
   pharo::run_script "
-	MCCacheRepository cacheDirectory: FileLocator home asFileReference / '.cache' / 'package-cache'
+	MCCacheRepository cacheDirectory: FileLocator home asFileReference / '.cache' / 'package-cache'.
+	Transcript logCr: MCCacheRepository cacheDirectory.
   "
+  
+  pharo:run_script "Transcript logCr: MCCacheRepository cacheDirectory."
 }
 
 ################################################################################
