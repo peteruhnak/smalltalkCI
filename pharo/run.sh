@@ -117,7 +117,8 @@ pharo::get_vm_url() {
       ;;
     "Pharo-stable"|"Pharo-6.1"|"Pharo-6.0"|"Moose-trunk"|"Moose-6.1")
       #echo "get.pharo.org/vm60"
-      echo "https://dztm7az76bgwm.cloudfront.net/vm61"
+      #echo "https://dztm7az76bgwm.cloudfront.net/vm61"
+      echo "https://s3.eu-central-1.amazonaws.com/pharo-files.peteruhnak.com/vm61-test"
       ;;
     "Pharo-5.0"|"Moose-6.0")
       echo "get.pharo.org/vm50"
