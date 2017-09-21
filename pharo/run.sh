@@ -270,6 +270,15 @@ pharo::run_script() {
 }
 
 ################################################################################
+# Change package cache directory to be independent of the image.
+################################################################################
+pharo::enable_package_cache() {
+  pharo::run_script "
+	MCCacheRepository cacheDirectory: FileLocator home asFileReference / '.cache' / 'package-cache'
+  "
+}
+
+################################################################################
 # Load project into Pharo image.
 ################################################################################
 pharo::load_project() {
@@ -324,6 +333,11 @@ run_build() {
   if ! vm_is_user_provided; then
     pharo::prepare_vm "${config_smalltalk}"
   fi
+  
+  #if package_cache_enabled; then
+	pharo::enable_package_cache "${config_smalltalk}"
+  #fi
+  
   if ston_includes_loading; then
     pharo::load_project
     check_build_status
