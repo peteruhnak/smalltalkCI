@@ -44,7 +44,8 @@ pharo::get_image_url() {
       echo "https://dztm7az76bgwm.cloudfront.net/60"
       ;;
     "Pharo-6.1")
-      echo "get.pharo.org/61"
+      #echo "get.pharo.org/61"
+      echo "https://dztm7az76bgwm.cloudfront.net/60"
       ;;
     "Pharo-5.0")
       echo "get.pharo.org/50"
