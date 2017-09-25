@@ -120,6 +120,7 @@ pharo::get_vm_url() {
   local os="$(pharo::get_os)"
   local heartbeat=""
   local latest=""
+  local arch=""
 
   if [ "${PHARO_VM:-}" == "latest" ]; then
     latest="Latest"
