@@ -2,4 +2,7 @@
 	"class" : {
 		"isPlatformCompatible" : "MaxLeske 7/11/2017 22:19" },
 	"instance" : {
+		"isTonel:" : "PU 11/9/2017 16:46",
+		"loadRepository" : "PU 11/9/2017 16:46",
+		"schemeWithUrl:" : "PU 11/9/2017 16:46",
 		"withLoadWarningsHandlerDo:" : "MaxLeske 7/11/2017 22:14" } }
